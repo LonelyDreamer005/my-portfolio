@@ -16,9 +16,9 @@ function Contact() {
     <section id="contact" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-[#F8D794]">Contact Me</h2>
-        <div className="bg-[#111A19] rounded-lg p-8 shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
+        <div className="bg-[#111A19] rounded-lg p-8 shadow-md border border-[#284139]">
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139]">
+            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
               <h3 className="text-xl font-semibold text-[#809076] mb-4">Get In Touch</h3>
               <p className="text-[#DCDEDD] mb-4">
                 Feel free to reach out to me for collaborations, questions, or just to say hi!
@@ -28,7 +28,7 @@ function Contact() {
                 <li><strong>Phone:</strong> +91-9392570591</li>
               </ul>
             </div>
-            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139]">
+            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
               <h3 className="text-xl font-semibold text-[#809076] mb-4">Connect on Social</h3>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
