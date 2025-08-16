@@ -15,7 +15,7 @@ function Skills() {
         <h2 className="text-3xl font-bold text-center mb-12 text-[#F8D794]">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category} className="bg-[#111A19] rounded-lg p-6 shadow-md border border-[#284139]">
+            <div key={category} className="bg-[#111A19] rounded-lg p-6 shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
               <h3 className="text-xl font-semibold text-[#809076] mb-4">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillList.map((skill) => (

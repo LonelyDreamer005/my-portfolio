@@ -5,17 +5,17 @@ function Achievements() {
     {
       title: "Machine Learning Specialization — Coursera (Andrew Ng)",
       description: "Completed ML specialization covering supervised learning, neural networks, and advanced ML techniques.",
-      date: "2025",
+      date: "2024",
     },
     {
       title: "SQL (Basic) — HackerRank",
       description: "Earned SQL (Basic) certificate validating knowledge of queries, joins, and database operations.",
-      date: "2025",
+      date: "2024",
     },
     {
       title: "Data Analytics Virtual Internship — Deloitte (Forage)",
       description: "Completed Deloitte’s virtual internship, applying analytics to business scenarios and dashboards.",
-      date: "2025",
+      date: "2024",
     },
     {
       title: "500+ Coding Problems Solved",
@@ -44,7 +44,7 @@ function Achievements() {
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="bg-[#111A19] rounded-lg p-6 shadow-md border border-[#284139]"
+              className="bg-[#111A19] rounded-lg p-6 shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl"
             >
               <h3 className="text-xl font-semibold text-[#809076] mb-2">
                 {achievement.title}

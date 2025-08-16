@@ -38,7 +38,7 @@ function About() {
             Detail-oriented and passionate Computer Science undergraduate with strong interest in full-stack web development, machine learning, and competitive programming. Skilled at building scalable applications, solving algorithmic problems, and collaborating in dynamic environments.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139] transition-all duration-300 hover:shadow-lg">
+            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
               <h3 className="text-xl font-semibold text-[#809076] mb-4">Personal Details</h3>
               <ul className="space-y-2 text-[#DCDEDD]">
                 {personalDetails.map((detail) => (
@@ -48,7 +48,7 @@ function About() {
                 ))}
               </ul>
             </div>
-            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139] transition-all duration-300 hover:shadow-lg">
+            <div className="bg-[#1B1B1B] p-6 rounded-lg shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
               <h3 className="text-xl font-semibold text-[#809076] mb-4">Education</h3>
               <ul className="space-y-4 text-[#DCDEDD]">
                 {education.map((edu) => (

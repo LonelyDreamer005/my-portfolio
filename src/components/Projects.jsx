@@ -34,7 +34,7 @@ function Projects() {
         <h2 className="text-3xl font-bold text-center mb-12 text-[#F8D794]">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <div key={project.title} className="bg-[#111A19] rounded-lg overflow-hidden shadow-md border border-[#284139]">
+            <div key={project.title} className="bg-[#111A19] rounded-lg overflow-hidden shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
               <img
                 src={project.image}
                 alt={project.title}

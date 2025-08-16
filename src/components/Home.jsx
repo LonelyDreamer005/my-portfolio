@@ -5,7 +5,7 @@ const profileImage = '/profile.jpg';
 function Home() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center py-16">
-      <div className="text-center bg-[#111A19] p-8 sm:p-10 md:p-12 rounded-2xl shadow-lg max-w-3xl mx-auto border border-[#284139]">
+      <div className="text-center bg-[#111A19] p-8 sm:p-10 md:p-12 rounded-2xl shadow-lg max-w-3xl mx-auto border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
         <div className="mb-8">
           <img
             src={profileImage}
