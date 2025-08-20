@@ -29,7 +29,7 @@ function Home() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
           <a
             href="#contact"
-            className="w-full sm:w-auto bg-[#284139] hover:bg-[#1f302a] text-[#F8D794] font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md hover:shadow-lg text-center"
+            className="w-full sm:w-auto !bg-[#284139] !hover:bg-[#1f302a] !text-[#F8D794] font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md hover:shadow-lg text-center"
           >
             Contact Me
           </a>

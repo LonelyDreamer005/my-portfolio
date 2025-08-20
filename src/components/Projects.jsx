@@ -47,7 +47,7 @@ function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#284139] hover:bg-[#1f302a] text-[#F8D794] font-semibold py-2 px-4 rounded-md transition-colors"
+                  className="inline-block !bg-[#284139] !hover:bg-[#1f302a] !text-[#F8D794] font-semibold py-2 px-4 rounded-md transition-colors"
                 >
                   View on GitHub
                 </a>
