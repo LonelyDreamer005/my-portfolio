@@ -35,22 +35,22 @@ function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="py-20">
+  <section id="achievements" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#F8D794]">
+    <h2 className="text-3xl font-bold text-center mb-12 text-[#A6BED1]">
           Achievements & Certifications
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="bg-[#111A19] rounded-lg p-6 shadow-md border border-[#284139] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl"
+        className="bg-[#0D273D] rounded-lg p-6 shadow-md border border-[#3E6985] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl"
             >
-              <h3 className="text-xl font-semibold text-[#809076] mb-2">
+        <h3 className="text-xl font-semibold text-[#8AA7BC] mb-2">
                 {achievement.title}
               </h3>
-              <p className="text-[#DCDEDD] mb-4">{achievement.description}</p>
-              <p className="text-sm font-semibold text-[#74483F]">
+        <p className="text-[#CDD7DF] mb-4">{achievement.description}</p>
+        <p className="text-sm font-semibold text-[#8AA7BC]">
                 {achievement.date}
               </p>
             </div>
