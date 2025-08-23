@@ -1,52 +1,51 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  
+function Navbar({ setActiveSection, activeSection }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Achievements', href: '#achievements' }, // <-- Add the new link
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: 'Home' },
+    { name: 'About', href: 'About' },
+    { name: 'Skills', href: 'Skills' },
+    { name: 'Projects', href: 'Projects' },
+    { name: 'Achievements', href: 'Achievements' },
+    { name: 'Contact', href: 'Contact' },
   ];
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
+  const getButtonClass = (linkName) => {
+    const isActive = activeSection === linkName;
+    const baseClasses = 'w-full text-left py-3 px-6 rounded-full text-lg font-semibold border border-white transition-all duration-300';
+    const activeClasses = 'bg-white text-[#1F2937] hover:bg-gray-200';
+    const inactiveClasses = 'bg-transparent text-white hover:bg-white hover:text-[#1F2937]';
+    
+    return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#0D273D] shadow-md border-b border-[#3E6985]">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-[#CDD7DF]">Vinay Sagar</a>
-        <div className="hidden md:flex space-x-6">
+    <div 
+      className="fixed left-0 top-0 h-full w-4 z-50"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <nav 
+        className={`fixed bg-[#1F2937] h-full w-64 transition-transform duration-300 ease-in-out transform ${
+          isHovered ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <h1 className="text-white text-3xl font-bold mb-8 p-4 pt-8 text-center">Portfolio</h1>
+        <div className="flex flex-col items-center space-y-4 px-4">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-[#CDD7DF] hover:text-[#A6BED1] transition duration-300">
+            <button
+              key={link.name}
+              onClick={() => setActiveSection(link.href)}
+              className={getButtonClass(link.href)}
+            >
               {link.name}
-            </a>
+            </button>
           ))}
         </div>
-
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#CDD7DF] focus:outline-none hover:text-[#A6BED1] transition-colors duration-300"
-        >
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </div>
-
-      {isOpen && (
-        <div className="md:hidden bg-[#0D273D] py-2 shadow-lg">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} onClick={handleLinkClick} className="block px-4 py-2 text-[#CDD7DF] hover:bg-[#3E6985] hover:text-[#A6BED1]">
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
+      </nav>
+    </div>
   );
 }
 

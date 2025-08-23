@@ -15,21 +15,21 @@ function Contact() {
   return (
     <section id="contact" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#A6BED1]">Contact Me</h2>
-        <div className="bg-[#0D273D] rounded-lg p-8 shadow-md border border-[#3E6985]">
+        <h2 className="text-3xl font-bold text-center mb-12 text-[#1F2937]">Contact Me</h2>
+        <div className="bg-white rounded-lg p-8 shadow-sm border border-[#E5E7EB]">
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-[#3E6985] p-6 rounded-lg shadow-md border border-[#8AA7BC] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
-              <h3 className="text-xl font-semibold text-[#A6BED1] mb-4">Get In Touch</h3>
-              <p className="text-[#CDD7DF] mb-4">
+            <div className="bg-[#F9FAFB] p-6 rounded-lg shadow-sm border border-[#E5E7EB] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md">
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">Get In Touch</h3>
+              <p className="text-[#4B5563] mb-4">
                 Feel free to reach out to me for collaborations, questions, or just to say hi!
               </p>
-              <ul className="space-y-2 text-[#CDD7DF]">
+              <ul className="space-y-2 text-[#374151]">
                 <li><strong>Email:</strong> vinay2020x15.10@gmail.com</li>
                 <li><strong>Phone:</strong> +91-9392570591</li>
               </ul>
             </div>
-            <div className="bg-[#3E6985] p-6 rounded-lg shadow-md border border-[#8AA7BC] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
-              <h3 className="text-xl font-semibold text-[#A6BED1] mb-4">Connect on Social</h3>
+            <div className="bg-[#F9FAFB] p-6 rounded-lg shadow-sm border border-[#E5E7EB] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md">
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">Connect on Social</h3>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
                   <a
@@ -37,10 +37,10 @@ function Contact() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#0D273D] hover:bg-[#3E6985] p-3 rounded-lg transition-all duration-300 hover:shadow-md border border-[#3E6985] hover:border-[#8AA7BC] group transform transition-transform duration-300 hover:scale-[1.1]"
+                    className="bg-white hover:bg-[#F3F4F6] p-3 rounded-lg transition-all duration-300 hover:shadow-md border border-[#E5E7EB] group transform transition-transform duration-300 hover:scale-[1.1]"
                     title={link.name}
                   >
-                    <span className="text-[#CDD7DF] group-hover:text-[#A6BED1] transition duration-300 text-2xl">
+                    <span className="text-[#16A34A] group-hover:text-[#15803D] transition duration-300 text-2xl">
                       {link.icon}
                     </span>
                   </a>
@@ -53,5 +53,6 @@ function Contact() {
     </section>
   );
 }
+
 
 export default Contact;
