@@ -2,9 +2,9 @@ import React from 'react';
 
 const profileImage = '/profile.jpg';
 
-function Home({ setActiveSection }) {
+function Home({ scrollToSection }) {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center py-16 bg-[#FAFAFA]">
+    <section className="min-h-screen flex items-center justify-center py-16 bg-[#FAFAFA]">
       <div className="text-center bg-white p-8 sm:p-10 md:p-12 rounded-2xl shadow-md max-w-3xl mx-auto border border-[#E5E7EB] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-lg">
         <div className="mb-8">
           <img
@@ -27,17 +27,17 @@ function Home({ setActiveSection }) {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
-          <a
-            onClick={() => setActiveSection('Contact')}
+          <button
+            onClick={() => scrollToSection('Contact')}
             className="w-full sm:w-auto bg-[#16A34A] hover:bg-[#15803D] !text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-sm hover:shadow-md text-center cursor-pointer"
           >
             Contact Me
-          </a>
+          </button>
           <a
             href="https://drive.google.com/file/d/1boDXiZvDRJPN1aKXIgsEm1d8Y8rk8pUy/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-white hover:bg-[#F3F4F6] text-[#1F2937] font-bold py-3 px-8 rounded-lg transition duration-300 border border-[#E5E7EB] shadow-sm hover:shadow-md text-center"
+            className="w-full sm:w-auto bg-white hover:bg-[#F3F4F6] !text-[#1F2937] font-bold py-3 px-8 rounded-lg transition duration-300 border border-[#E5E7EB] shadow-sm hover:shadow-md text-center"
           >
             <span className="flex items-center justify-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
