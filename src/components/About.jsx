@@ -1,5 +1,14 @@
 import React from 'react';
 
+// Feldgrau and Wheat color palette
+const colors = {
+  feldgrau: '#3A4B41',
+  wheat: '#E6CFA7',
+  darkText: '#3A4B41',
+  lightText: '#E6CFA7',
+  accentGreen: '#4A5D4E'
+};
+
 function About() {
   const personalDetails = [
     { label: 'Name', value: 'Vinay Sagar Paruchuri' },
@@ -30,17 +39,17 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#1F2937]">About Me</h2>
-        <div className="bg-white rounded-lg p-8 shadow-sm border border-[#E5E7EB]">
-          <p className="text-[#4B5563] mb-6 leading-relaxed">
+    <section id="about" className="py-10" style={{ backgroundColor: colors.wheat }}>
+      <div className="max-w-6xl mx-auto px-3">
+        <h2 className="text-3xl font-bold text-center mb-6" style={{ color: colors.darkText }}>About Me</h2>
+        <div className="rounded-lg p-5 shadow-sm border" style={{ backgroundColor: colors.feldgrau, borderColor: colors.accentGreen, color: colors.lightText }}>
+          <p className="mb-6 leading-relaxed" style={{ color: colors.lightText }}>
             Detail-oriented and passionate Computer Science undergraduate with strong interest in full-stack web development, machine learning, and competitive programming. Skilled at building scalable applications, solving algorithmic problems, and collaborating in dynamic environments.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#F9FAFB] p-6 rounded-lg shadow-sm border border-[#E5E7EB] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md">
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">Personal Details</h3>
-              <ul className="space-y-2 text-[#374151]">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-lg shadow-sm border transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md" style={{ backgroundColor: colors.wheat, borderColor: colors.feldgrau, color: colors.darkText }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: colors.darkText }}>Personal Details</h3>
+              <ul className="space-y-2" style={{ color: colors.darkText }}>
                 {personalDetails.map((detail) => (
                   <li key={detail.label}>
                     <strong>{detail.label}:</strong> {detail.value}
@@ -48,15 +57,15 @@ function About() {
                 ))}
               </ul>
             </div>
-            <div className="bg-[#F9FAFB] p-6 rounded-lg shadow-sm border border-[#E5E7EB] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md">
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">Education</h3>
-              <ul className="space-y-4 text-[#374151]">
+            <div className="p-6 rounded-lg shadow-sm border transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md" style={{ backgroundColor: colors.wheat, borderColor: colors.feldgrau, color: colors.darkText }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: colors.darkText }}>Education</h3>
+              <ul className="space-y-4" style={{ color: colors.darkText }}>
                 {education.map((edu) => (
                   <li key={edu.degree}>
                     <div className="mb-1 font-semibold">{edu.degree}</div>
                     <div>{edu.institution}</div>
-                    <div className="text-sm text-[#6B7280]">{edu.years}</div>
-                    <div className="text-sm text-[#6B7280]">{edu.score}</div>
+                    <div className="text-sm">{edu.years}</div>
+                    <div className="text-sm">{edu.score}</div>
                   </li>
                 ))}
               </ul>

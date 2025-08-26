@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
+// Feldgrau and Wheat color palette
+const colors = {
+  feldgrau: '#3A4B41',
+  wheat: '#E6CFA7',
+  darkText: '#3A4B41',
+  lightText: '#E6CFA7',
+  accentGreen: '#4A5D4E'
+};
+
 function Navbar({ scrollToSection }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
@@ -54,14 +63,20 @@ function Navbar({ scrollToSection }) {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300`} 
+         style={{ 
+           backgroundColor: scrolled ? colors.feldgrau : 'transparent', 
+           boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+           padding: scrolled ? '0.75rem 0' : '1.25rem 0'
+         }}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo / Brand */}
           <div className="flex items-center">
             <a 
               href="#home" 
-              className={`text-xl font-bold ${scrolled ? 'text-[#1F2937]' : 'text-[#1F2937]'} transition-colors duration-300`}
+              className="text-xl font-bold transition-colors duration-300"
+              style={{ color: scrolled ? colors.wheat : colors.darkText }}
               onClick={(e) => {
                 e.preventDefault();
                 handleClick('Home');
@@ -77,18 +92,20 @@ function Navbar({ scrollToSection }) {
               <button
                 key={link.name}
                 onClick={() => handleClick(link.href)}
-                className={`font-medium text-sm transition-colors duration-300 outline-none focus:outline-none hover:no-underline ${
-                  activeSection === link.href 
-                    ? 'text-[#16A34A] font-semibold'
-                    : scrolled 
-                      ? 'text-[#4B5563] hover:text-[#16A34A]' 
-                      : 'text-[#4B5563] hover:text-[#16A34A]'
-                }`}
+                className="font-medium text-sm transition-colors duration-300 outline-none focus:outline-none hover:no-underline"
+                style={{ 
+                  color: activeSection === link.href 
+                    ? (scrolled ? colors.wheat : colors.accentGreen)
+                    : (scrolled ? colors.wheat : colors.darkText)
+                }}
               >
                 <span className="relative">
                   {link.name}
                   {activeSection === link.href && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#16A34A] transform origin-left transition-all duration-300"></span>
+                    <span 
+                      className="absolute -bottom-1 left-0 w-full h-0.5 transform origin-left transition-all duration-300"
+                      style={{ backgroundColor: scrolled ? colors.wheat : colors.accentGreen }}
+                    ></span>
                   )}
                 </span>
               </button>
@@ -97,8 +114,13 @@ function Navbar({ scrollToSection }) {
               href="https://drive.google.com/file/d/1boDXiZvDRJPN1aKXIgsEm1d8Y8rk8pUy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 px-4 py-2 rounded-md font-medium text-sm transition-all duration-300 outline-none focus:outline-none bg-[#16A34A] text-white hover:bg-[#15803D] hover:shadow-md"
-              style={{ color: 'white !important' }} /* Force color override */
+              className="ml-4 px-4 py-2 rounded-md font-medium text-sm transition-all duration-300 outline-none focus:outline-none hover:shadow-md"
+              style={{ 
+                backgroundColor: scrolled ? colors.wheat : colors.feldgrau, 
+                color: scrolled ? colors.feldgrau : colors.wheat 
+              }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = scrolled ? colors.accentGreen : colors.accentGreen}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = scrolled ? colors.wheat : colors.feldgrau}
             >
               Resume
             </a>
@@ -106,11 +128,10 @@ function Navbar({ scrollToSection }) {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 rounded-md transition-colors duration-300 outline-none focus:outline-none ${
-              scrolled 
-                ? 'text-[#1F2937] hover:text-[#16A34A]' 
-                : 'text-[#1F2937] hover:text-[#16A34A]'
-            }`}
+            className="md:hidden p-2 rounded-md transition-colors duration-300 outline-none focus:outline-none"
+            style={{ 
+              color: scrolled ? colors.wheat : colors.darkText 
+            }}
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
           >
@@ -121,14 +142,16 @@ function Navbar({ scrollToSection }) {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 w-64 bg-white shadow-lg transform transition-all duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-50 w-64 shadow-lg transform transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
+        style={{ backgroundColor: colors.feldgrau }}
       >
         {/* Close button */}
         <div className="flex justify-end p-4">
           <button
-            className="text-gray-600 p-2 transition-colors duration-300 rounded-full hover:bg-gray-100 outline-none focus:outline-none"
+            className="p-2 transition-colors duration-300 rounded-full outline-none focus:outline-none"
+            style={{ color: colors.wheat }}
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
           >
@@ -141,16 +164,18 @@ function Navbar({ scrollToSection }) {
             <button
               key={link.name}
               onClick={() => handleClick(link.href)}
-              className={`py-2 px-4 text-left rounded-md transition-all duration-300 outline-none focus:outline-none ${
-                activeSection === link.href 
-                  ? 'text-[#16A34A] font-medium' 
-                  : 'text-gray-700 hover:text-[#16A34A]'
-              }`}
+              className="py-2 px-4 text-left rounded-md transition-all duration-300 outline-none focus:outline-none"
+              style={{ 
+                color: activeSection === link.href ? colors.wheat : 'rgba(230, 207, 167, 0.7)'
+              }}
             >
               <span className="relative inline-block">
                 {link.name}
                 {activeSection === link.href && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#16A34A] transform origin-left transition-all duration-300"></span>
+                  <span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 transform origin-left transition-all duration-300"
+                    style={{ backgroundColor: colors.wheat }}
+                  ></span>
                 )}
               </span>
             </button>
@@ -159,8 +184,11 @@ function Navbar({ scrollToSection }) {
             href="https://drive.google.com/file/d/1boDXiZvDRJPN1aKXIgsEm1d8Y8rk8pUy/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 py-2 px-4 bg-[#16A34A] text-white rounded-md text-center font-medium hover:bg-[#15803D] transition-all duration-300 shadow-sm hover:shadow-md outline-none focus:outline-none"
-            style={{ color: 'white !important' }} /* Force color override */
+            className="mt-4 py-2 px-4 rounded-md text-center font-medium transition-all duration-300 shadow-sm hover:shadow-md outline-none focus:outline-none"
+            style={{ 
+              backgroundColor: colors.wheat,
+              color: colors.feldgrau
+            }}
           >
             Resume
           </a>
@@ -170,10 +198,10 @@ function Navbar({ scrollToSection }) {
       {/* Backdrop for mobile menu with fade transition */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-0 z-40 transition-opacity duration-300"
+          className="fixed inset-0 z-40 transition-opacity duration-300"
           style={{ 
-            animation: 'fadeInBackdrop 0.3s forwards',
-            backdropFilter: 'blur(2px)'
+            backgroundColor: 'rgba(58, 75, 65, 0.5)',
+            backdropFilter: 'blur(3px)'
           }}
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
@@ -182,18 +210,9 @@ function Navbar({ scrollToSection }) {
 
       {/* Add global styles for animations and overrides */}
       <style jsx>{`
-        @keyframes fadeInBackdrop {
-          from { background-opacity: 0; }
-          to { background-opacity: 0.3; }
-        }
-        
         button:focus, button:active {
           outline: none !important;
           box-shadow: none !important;
-        }
-        
-        a[href*="drive.google.com"] {
-          color: white !important;
         }
       `}</style>
     </nav>

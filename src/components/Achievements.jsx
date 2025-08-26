@@ -1,5 +1,14 @@
 import React from 'react';
 
+// Feldgrau and Wheat color palette
+const colors = {
+  feldgrau: '#3A4B41',
+  wheat: '#E6CFA7',
+  darkText: '#3A4B41',
+  lightText: '#E6CFA7',
+  accentGreen: '#4A5D4E'
+};
+
 function Achievements() {
   const achievements = [
     {
@@ -35,22 +44,23 @@ function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#1F2937]">
+    <section id="achievements" className="py-10" style={{ backgroundColor: colors.wheat }}>
+      <div className="max-w-6xl mx-auto px-3">
+        <h2 className="text-3xl font-bold text-center mb-6" style={{ color: colors.darkText }}>
           Achievements & Certifications
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 shadow-sm border border-[#E5E7EB] transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md"
+              className="rounded-lg p-4 shadow-sm border transform transition-transform duration-300 hover:scale-[1.01] hover:shadow-md"
+              style={{ backgroundColor: colors.feldgrau, borderColor: colors.accentGreen }}
             >
-              <h3 className="text-xl font-semibold text-[#374151] mb-2">
+              <h3 className="text-lg font-semibold mb-1.5" style={{ color: colors.wheat }}>
                 {achievement.title}
               </h3>
-              <p className="text-[#4B5563] mb-4">{achievement.description}</p>
-              <p className="text-sm font-semibold text-[#6B7280]">
+              <p className="mb-2 text-sm" style={{ color: colors.wheat }}>{achievement.description}</p>
+              <p className="text-xs font-semibold" style={{ color: 'rgba(230, 207, 167, 0.8)' }}>
                 {achievement.date}
               </p>
             </div>

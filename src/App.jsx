@@ -8,6 +8,15 @@ import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+// Feldgrau and Wheat color palette
+const colors = {
+  feldgrau: '#3A4B41',
+  wheat: '#E6CFA7',
+  darkText: '#3A4B41',
+  lightText: '#E6CFA7',
+  accentGreen: '#4A5D4E'
+};
+
 function App() {
   // Create refs for each section for smooth scrolling
   const homeRef = React.useRef(null);
@@ -39,7 +48,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#FAFAFA]">
+    <div className="relative min-h-screen" style={{ backgroundColor: colors.wheat }}>
       <Navbar scrollToSection={scrollToSection} />
       <main className="pt-16">  {/* Add padding for fixed navbar */}
         <div ref={homeRef} id="home">
