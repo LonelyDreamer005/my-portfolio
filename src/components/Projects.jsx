@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import todoImage from '../assets/images/To_Do.png';
 import pokedexImage from '../assets/images/ai_pokedex.png';
-import mixDesk from '../assets/images/mixDesk.png'; 
+import mixDesk from '../assets/images/mixDesk.png';
+import rpdfood from '../assets/images/rapid_food.png'; 
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
@@ -25,7 +26,7 @@ function Projects() {
       description: "Responsive task management app with local storage persistence and clean UI.",
       image: todoImage,
       github: "https://github.com/LonelyDreamer005/To_do",
-      demo: "https://lonelydreamer005.github.io/To_do/", // Replace with actual demo when available
+      demo: "https://to-do-one-black-81.vercel.app/", // Replace with actual demo when available
       tech: ['HTML', 'CSS', 'JavaScript'],
       features: [
         "Task creation and deletion",
@@ -55,13 +56,29 @@ function Projects() {
       description: "React application integrating calculator, weather, timer and currency tools with a collapsible navigation system.",
       image: mixDesk,
       github: "https://github.com/LonelyDreamer005/calc-weather-currency",
-      demo: "https://github.com/LonelyDreamer005/calc-weather-currency", // Replace with actual demo when available
+      demo: "https://calc-weather-currency.vercel.app/", // Replace with actual demo when available
       tech: ['React', 'Tailwind CSS', 'APIs'],
       features: [
         "Multi-functional calculator",
         "Weather forecast integration",
         "Currency converter with live rates",
         "Timer with notifications",
+        "Unified sidebar navigation"
+      ]
+    },
+    {
+      id: 'rapid-food',
+      title: "Rapid Food",
+      description: "React application for quick food ordering with real-time tracking and user authentication.",
+      image: rpdfood,
+      github: "https://github.com/LonelyDreamer005/rapid-food",
+      demo: "https://rapid-food.vercel.app/", // Replace with actual demo when available
+      tech: ['React', 'Tailwind CSS'],
+      features: [
+        "Real-time order tracking",
+        "User authentication",
+        "Responsive design",
+        "Intuitive UI/UX",
         "Unified sidebar navigation"
       ]
     }
@@ -78,7 +95,7 @@ function Projects() {
   return (
     <section id="projects" className="py-10" style={{ backgroundColor: colors.feldgrau }}>
       <div className="max-w-6xl mx-auto px-3">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-6" style={{ color: colors.wheat }}>Featured Projects</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-6" style={{ color: colors.wheat }}>Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project) => (
             <div 
@@ -135,8 +152,29 @@ function Projects() {
                     <FaGithub size={16} />
                     <span>Code</span>
                   </a>
-                  
-                  
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View live demo of ${project.title}`}
+                    className="flex items-center justify-center gap-2 flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors border"
+                    style={{ 
+                      backgroundColor: 'transparent', 
+                      color: colors.darkText, 
+                      borderColor: colors.accentGreen 
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.feldgrau;
+                      e.currentTarget.style.color = colors.wheat;
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = colors.darkText;
+                    }}
+                  >
+                    <FiExternalLink size={16} />
+                    <span>Live Demo</span>
+                  </a>
                 </div>
               </div>
             </div>
