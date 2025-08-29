@@ -111,7 +111,7 @@ function Navbar({ scrollToSection }) {
               </button>
             ))}
             <a
-              href="https://drive.google.com/file/d/1boDXiZvDRJPN1aKXIgsEm1d8Y8rk8pUy/view?usp=sharing"
+              href="https://drive.google.com/file/d/1L12uBxR223fBKISFUZbw0B45kxe8kQu2/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 px-4 py-2 rounded-md font-medium text-sm transition-all duration-300 outline-none focus:outline-none hover:shadow-md"
@@ -181,7 +181,7 @@ function Navbar({ scrollToSection }) {
             </button>
           ))}
           <a
-            href="https://drive.google.com/file/d/1boDXiZvDRJPN1aKXIgsEm1d8Y8rk8pUy/view?usp=sharing"
+            href="https://drive.google.com/file/d/1L12uBxR223fBKISFUZbw0B45kxe8kQu2/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 py-2 px-4 rounded-md text-center font-medium transition-all duration-300 shadow-sm hover:shadow-md outline-none focus:outline-none"

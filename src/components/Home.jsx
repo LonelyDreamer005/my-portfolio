@@ -50,7 +50,7 @@ function Home({ scrollToSection }) {
             Contact Me
           </button>
           <a
-            href="https://drive.google.com/file/d/1boDXiZvDRJPN1aKXIgsEm1d8Y8rk8pUy/view?usp=sharing"
+            href="https://drive.google.com/file/d/1L12uBxR223fBKISFUZbw0B45kxe8kQu2/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto font-bold py-2 px-6 rounded-md transition duration-300 border shadow-sm hover:shadow-md text-center"
