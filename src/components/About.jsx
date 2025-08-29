@@ -11,32 +11,33 @@ const colors = {
 
 function About() {
   const personalDetails = [
-    { label: 'Name', value: 'Vinay Sagar Paruchuri' },
-    { label: 'Location', value: 'Hyderabad, Telangana' },
-    { label: 'Email', value: 'vinay2020x15.10@gmail.com' },
-    { label: 'Phone', value: '+91-9392570591' },
-  ];
+  { label: 'Full Name', value: 'Vinay Sagar Paruchuri' },
+  { label: 'Location', value: 'Hyderabad, Telangana, India' },
+  { label: 'Email', value: 'vinay2020x15.10@gmail.com' },
+  { label: 'Phone', value: '+91-9392570591' },
+];
 
-  const education = [
-    {
-      degree: 'B.Tech in Computer Science and Engineering',
-      institution: 'VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad',
-      years: '2023–2027',
-      score: 'CGPA: 8.2/10.0',
-    },
-    {
-      degree: 'Intermediate (MPC)',
-      institution: 'Sri Chaitanya Junior College',
-      years: '2021–2023',
-      score: 'Score: 93.7%',
-    },
-    {
-      degree: 'SSC',
-      institution: 'Narayana High School',
-      years: 'Completed 2021',
-      score: 'Score: 10.0/10.0',
-    },
-  ];
+const education = [
+  {
+    degree: 'Bachelor of Technology in Computer Science and Engineering',
+    institution: 'VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad',
+    years: '2023 – 2027',
+    score: 'CGPA: 8.28 / 10.0',
+  },
+  {
+    degree: 'Intermediate (MPC)',
+    institution: 'Sri Chaitanya Junior College, Hyderabad',
+    years: '2021 – 2023',
+    score: 'Percentage: 93.7%',
+  },
+  {
+    degree: 'Secondary School Certificate (SSC)',
+    institution: 'Narayana High School, Hyderabad',
+    years: 'Completed 2021',
+    score: 'CGPA: 10.0 / 10.0',
+  },
+];
+
 
   return (
     <section id="about" className="py-10" style={{ backgroundColor: colors.wheat }}>

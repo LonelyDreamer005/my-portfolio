@@ -1,6 +1,6 @@
 import React from 'react';
 
-const profileImage = '/profile.jpg';
+import profileImage from '../assets/images/profile.png';
 
 // Feldgrau and Wheat color palette
 const colors = {

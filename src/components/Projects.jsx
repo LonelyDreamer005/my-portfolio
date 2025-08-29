@@ -21,18 +21,20 @@ function Projects() {
 
   const projects = [
     {
-      id: 'todo-app',
-      title: "To-Do List",
-      description: "Responsive task management app with local storage persistence and clean UI.",
-      image: todoImage,
-      github: "https://github.com/LonelyDreamer005/To_do",
-      demo: "https://to-do-one-black-81.vercel.app/", // Replace with actual demo when available
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      features: [
-        "Task creation and deletion",
-        "Local storage persistence",
-        "Responsive design for all devices",
-        "Task completion tracking"
+    id: 'todo-app',
+    title: "To-Do List",
+    description: "A modern, responsive task management application built with vanilla JavaScript, HTML, and CSS. Features include real-time task creation and deletion, local storage persistence, task completion tracking, and a clean, intuitive UI with dark mode support.",
+    image: todoImage, // Replace with your actual image import or path
+    github: "https://github.com/LonelyDreamer005/To_do",
+    demo: "https://to-do-one-black-81.vercel.app/",
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    features: [
+    "Add, complete, and delete tasks in real time",
+    "Persistent storage using browser localStorage",
+    "Responsive design for seamless experience on all devices",
+    "Task completion tracking and counter",
+    "Live clock display",
+    "Dark mode toggle for user preference"
       ]
     },
     {
@@ -53,11 +55,11 @@ function Projects() {
     {
       id: 'all-in-one',
       title: "All-in-One Tool",
-      description: "React application integrating calculator, weather, timer and currency tools with a collapsible navigation system.",
+      description: "A responsive web app offering Calculator, Weather, and Currency Converter tools in one interface, built with HTML, CSS, JavaScript, and real-time API integration.",
       image: mixDesk,
       github: "https://github.com/LonelyDreamer005/calc-weather-currency",
       demo: "https://calc-weather-currency.vercel.app/", // Replace with actual demo when available
-      tech: ['React', 'Tailwind CSS', 'APIs'],
+      tech: ['HTML5', 'Tailwind CSS', 'APIs'],
       features: [
         "Multi-functional calculator",
         "Weather forecast integration",
@@ -67,21 +69,21 @@ function Projects() {
       ]
     },
     {
-      id: 'rapid-food',
-      title: "Rapid Food",
-      description: "React application for quick food ordering with real-time tracking and user authentication.",
-      image: rpdfood,
-      github: "https://github.com/LonelyDreamer005/rapid-food",
-      demo: "https://rapid-food.vercel.app/", // Replace with actual demo when available
-      tech: ['React', 'Tailwind CSS'],
-      features: [
-        "Real-time order tracking",
-        "User authentication",
-        "Responsive design",
-        "Intuitive UI/UX",
-        "Unified sidebar navigation"
-      ]
-    }
+  id: 'rapid-food',
+  title: "Rapid Food",
+  description: "Rapid Food is a modern React-based web application designed for seamless and efficient food ordering. The platform features real-time order tracking, secure user authentication, and a highly responsive interface, ensuring an intuitive and enjoyable user experience across all devices.",
+  image: rpdfood,
+  github: "https://github.com/LonelyDreamer005/rapid-food",
+  demo: "https://rapid-food.vercel.app/",
+  tech: ['React', 'Vite', 'React Router', 'Axios', 'Tailwind CSS'],
+  features: [
+    "Real-time order tracking for up-to-date delivery status",
+    "Secure user authentication and account management",
+    "Fully responsive design optimized for mobile and desktop",
+    "Intuitive and user-friendly UI/UX",
+    "Unified sidebar navigation for easy access to all features"
+  ]
+}
   ];
 
   const openProjectModal = (project) => {
@@ -125,16 +127,25 @@ function Projects() {
                 <p className="text-sm mb-2.5" style={{ color: colors.darkText }}>{project.description}</p>
                 
                 <div className="flex flex-wrap gap-1.5 mb-2.5">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={`${project.id}-${tech}`}
-                      className="text-xs px-2 py-1 rounded-full"
-                      style={{ backgroundColor: colors.feldgrau, color: colors.wheat }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                {project.tech.map((tech) => (
+                <span
+                key={`${project.id}-${tech}`}
+      className="text-xs px-2 py-1 rounded-full"
+                style={{ backgroundColor: colors.feldgrau, color: colors.wheat }}
+                >
+                {tech}
+                </span>
+                ))}
                 </div>
+{/* Add this block to show features */}
+<ul className="list-disc pl-5 mb-2 text-xs" style={{ color: colors.darkText }}>
+  {project.features.slice(0, 3).map((feature, idx) => (
+    <li key={`card-feature-${project.id}-${idx}`}>{feature}</li>
+  ))}
+  {project.features.length > 3 && (
+    <li className="italic">...and more</li>
+  )}
+</ul>
               </div>
               
               <div className="px-3 pb-3 mt-auto pt-3" style={{ borderTop: `1px solid ${colors.feldgrau}`, borderTopOpacity: 0.2 }}>
